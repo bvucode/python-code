@@ -15,16 +15,24 @@ with open("enru.txt", "r") as file:
             eng, rus = row.split(":")
             forcount[eng] = rus
 count = len(forcount.items())
+def countwords():
+    global count
+    lbl5.configure(text = count)
 def save():
     global count
     lbl3.configure(text = ent_eng.get())
     lbl4.configure(text = ent_ru.get())
-    count += 1
-    lbl5.configure(text = count)
-    with open("enru.txt", "a") as file:
-        file.write("{}:{}\n".format(ent_eng.get(),ent_ru.get()))
+    if forcount.get(ent_eng.get()):
+        ent_eng.delete(0, "end")
+        ent_ru.delete(0, "end")  
+    else:
+        with open("enru.txt", "a") as file:
+            file.write("{}:{}\n".format(ent_eng.get(),ent_ru.get()))
+            forcount[ent_eng.get()] = ent_ru.get()
+        count += 1
         ent_eng.delete(0, "end")
         ent_ru.delete(0, "end")
+    countwords()
 lbl1 = tkinter.Label(root, text = "english")
 lbl2 = tkinter.Label(root, text = "russian")
 lbl3 = tkinter.Label(root, text = "")
@@ -42,4 +50,5 @@ btn1.pack()
 lbl3.pack()
 lbl4.pack()
 lbl5.pack()
+countwords()
 root.mainloop()
