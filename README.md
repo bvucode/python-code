@@ -1,5 +1,5 @@
 # mypythonapps
-mynotebook.py for my english skills,
+engcards.py for my english skills,
 bashegame.py is logic game,
 mytaskmanager.py is kanban command line,
 passwordgenerator.py is password generate and save,
