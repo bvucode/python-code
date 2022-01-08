@@ -6,7 +6,7 @@ import random
 
 root = tkinter.Tk()
 root.title("engcards")
-root.geometry("500x300")
+root.geometry("500x350")
 forcount = {}
 startstopflag = 0
 with open("enru.txt", "r") as file:
@@ -48,16 +48,17 @@ def save():
         ent_eng.delete(0, "end")
         ent_ru.delete(0, "end")
     countwords()
-lbl1 = tkinter.Label(root, text = "english")
-lbl2 = tkinter.Label(root, text = "russian")
-lbl3 = tkinter.Label(root, text = "")
-lbl4 = tkinter.Label(root, text = "")
-lbl5 = tkinter.Label(root, text = "")
-lbl6 = tkinter.Label(root, text = "")
-lbl7 = tkinter.Label(root, text = "")
-ent_eng = tkinter.Entry(root, width = 40)
+lbl1 = tkinter.Label(root, text = "english") # label "english"
+lbl2 = tkinter.Label(root, text = "russian") # label "russian"
+lbl3 = tkinter.Label(root, text = "") # label word in english 
+lbl4 = tkinter.Label(root, text = "") # label translated
+lbltotal = tkinter.Label(root, text = "total words: ") # label text of total of dictionary
+lbl5 = tkinter.Label(root, text = "") # label of number count dict.
+lbl6 = tkinter.Label(root, text = "") # key
+lbl7 = tkinter.Label(root, text = "") # value
+ent_eng = tkinter.Entry(root, width = 40) # entry of english word
 ent_eng.focus()
-ent_ru = tkinter.Entry(root, width = 40)
+ent_ru = tkinter.Entry(root, width = 40) # entry of translated
 btn1 = tkinter.Button(root, text = "save", command = save)
 btn2 = tkinter.Button(root, text = "show cards", command = startshowcards)
 btn3 = tkinter.Button(root, text = "stop show", command = stopshowcards)
@@ -66,11 +67,12 @@ ent_eng.pack()
 lbl2.pack()
 ent_ru.pack()
 btn1.pack()
-btn2.pack()
-btn3.pack()
 lbl3.pack()
 lbl4.pack()
+lbltotal.pack()
 lbl5.pack()
+btn2.pack()
+btn3.pack()
 lbl6.pack()
 lbl7.pack()
 countwords()
