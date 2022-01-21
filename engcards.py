@@ -39,9 +39,9 @@ def countwords():
     lbl5.configure(text = count)
 def save():
     global count
-    lbl3.configure(text = ent_eng.get())
-    lbl4.configure(text = ent_ru.get())
-    if forcount.get(ent_eng.get()):
+    if forcount.get(ent_eng.get()) or ent_eng.get() == 0:
+        lbl3.configure(text = "this word")
+        lbl4.configure(text = "may have yet")
         ent_eng.delete(0, "end")
         ent_ru.delete(0, "end")  
     else:
@@ -49,9 +49,11 @@ def save():
             file.write("{}:{}\n".format(ent_eng.get(),ent_ru.get()))
             forcount[ent_eng.get()] = ent_ru.get()
         count += 1
+        lbl3.configure(text = ent_eng.get())
+        lbl4.configure(text = ent_ru.get())
         ent_eng.delete(0, "end")
         ent_ru.delete(0, "end")
-    countwords()
+        countwords()
 lbl1 = tkinter.Label(root, text = "english") # label "english"
 lbl2 = tkinter.Label(root, text = "translated") # label "russian"
 lbl3 = tkinter.Label(root, text = "") # label word in english 
