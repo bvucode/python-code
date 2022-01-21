@@ -49,7 +49,7 @@ def save():
         ent_ru.delete(0, "end")
     countwords()
 lbl1 = tkinter.Label(root, text = "english") # label "english"
-lbl2 = tkinter.Label(root, text = "russian") # label "russian"
+lbl2 = tkinter.Label(root, text = "translated") # label "russian"
 lbl3 = tkinter.Label(root, text = "") # label word in english 
 lbl4 = tkinter.Label(root, text = "") # label translated
 lbltotal = tkinter.Label(root, text = "total words: ") # label text of total of dictionary
