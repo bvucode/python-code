@@ -1,4 +1,4 @@
-# remember english words with cards
+# save and remember english words with cards
 # author Bulat
 
 import tkinter
@@ -6,7 +6,7 @@ import random
 
 root = tkinter.Tk()
 root.title("engcards")
-root.geometry("500x350")
+root.geometry("500x250")
 forcount = {}
 startstopflag = 0
 with open("enru.txt", "r") as file:
@@ -17,19 +17,23 @@ with open("enru.txt", "r") as file:
             eng, rus = row.split(":")
             forcount[eng] = rus
 count = len(forcount.items())
-def stopshowcards():
+def showcards():
     global startstopflag
-    startstopflag = 1
-def startshowcards():
-    global startstopflag
-    while startstopflag == 0:
+    while startstopflag == 1:
         engvar, ruvar = random.choice(list(forcount.items()))
         lbl3.configure(text = engvar)
         lbl4.configure(text = ruvar)
         root.after(5000)
         root.update()
+def startstopshowcards():
+    global startstopflag
+    if startstopflag == 0:
+        btn2["text"] = "pause"
+        startstopflag = 1
+        showcards()
     else:
-       startstopflag = 0 
+        btn2["text"] = "show cards"
+        startstopflag = 0
 def countwords():
     global count
     lbl5.configure(text = count)
@@ -58,8 +62,7 @@ ent_eng = tkinter.Entry(root, width = 40) # entry of english word
 ent_eng.focus()
 ent_ru = tkinter.Entry(root, width = 40) # entry of translated
 btn1 = tkinter.Button(root, text = "save", command = save)
-btn2 = tkinter.Button(root, text = "show cards", command = startshowcards)
-btn3 = tkinter.Button(root, text = "stop show", command = stopshowcards)
+btn2 = tkinter.Button(root, text = "show cards", command = startstopshowcards)
 lbl1.pack()
 ent_eng.pack()
 lbl2.pack()
@@ -70,7 +73,6 @@ lbl4.pack()
 lbltotal.pack()
 lbl5.pack()
 btn2.pack()
-btn3.pack()
 countwords()
 if __name__ == "__main__":
     root.mainloop()
