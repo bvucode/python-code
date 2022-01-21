@@ -24,8 +24,8 @@ def startshowcards():
     global startstopflag
     while startstopflag == 0:
         engvar, ruvar = random.choice(list(forcount.items()))
-        lbl6.configure(text = engvar)
-        lbl7.configure(text = ruvar)
+        lbl3.configure(text = engvar)
+        lbl4.configure(text = ruvar)
         root.after(5000)
         root.update()
     else:
@@ -54,8 +54,6 @@ lbl3 = tkinter.Label(root, text = "") # label word in english
 lbl4 = tkinter.Label(root, text = "") # label translated
 lbltotal = tkinter.Label(root, text = "total words: ") # label text of total of dictionary
 lbl5 = tkinter.Label(root, text = "") # label of number count dict.
-lbl6 = tkinter.Label(root, text = "") # key
-lbl7 = tkinter.Label(root, text = "") # value
 ent_eng = tkinter.Entry(root, width = 40) # entry of english word
 ent_eng.focus()
 ent_ru = tkinter.Entry(root, width = 40) # entry of translated
@@ -73,8 +71,6 @@ lbltotal.pack()
 lbl5.pack()
 btn2.pack()
 btn3.pack()
-lbl6.pack()
-lbl7.pack()
 countwords()
 if __name__ == "__main__":
     root.mainloop()
