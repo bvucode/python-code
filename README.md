@@ -1,6 +1,6 @@
 # mypythonapps
 bashegame.py is logic game,
 
-mytaskmanager.py is kanban command line,
+taskmanager.py is to-do list command line,
 
 passwordgenerator.py is password generate and save.
