@@ -1,4 +1,4 @@
-# password generator
+# generate and save password 
 # author Bulat
 
 import random
