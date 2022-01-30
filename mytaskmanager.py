@@ -1,35 +1,30 @@
 # mytaskmanager
 # author Bulat
 
-print("mytaskmanager \n")
-print(" a - add task \n s - show task \n t - take task \n h - help\n")
 tasklist = []
 def main():
-    cd = input("command ")
-    if cd == "a":
-        add()
-    elif cd == "s":
-        show()
-    elif cd == "t":
-        take()
-    elif cd == "h":
-        help()
-def add():
-    task = input("task: ")
-    save(task)
-def save(arg):
-    tasklist.append(arg)
-def take():
-    print("{} is done.".format(tasklist[0]))
-    del tasklist[0]
-def show():
-    print("to do:")
-    for i in range(len(tasklist)):
-        tvar = i
-        tvar += 1
-        print("{}) {}".format(tvar, tasklist[i]))
-def help():
+    global xt
+    xt = input(">> ")
+    getf(xt)
+def getf(arg):
+    if not arg:
+        main()
+    elif arg == "show":
+        print("to do:")
+        for i in range(len(tasklist)):
+            tvar = i
+            tvar += 1
+            print("{}) {}".format(tvar, tasklist[i]))
+    elif arg == "take":
+        print("{} is done.".format(tasklist[0]))
+        del tasklist[0]
+    elif arg == "help":
+        xhelp()
+    else:
+        tasklist.append(xt)
+def xhelp():
     print("this is taskmanager.")
+    print("\n show - show task \n take - take task \n help - help\n")
+xhelp()
 while True:
     main()
-
