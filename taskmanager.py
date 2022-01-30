@@ -1,4 +1,4 @@
-# mytaskmanager
+# taskmanager
 # author Bulat
 
 tasklist = []
