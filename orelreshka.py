@@ -1,5 +1,5 @@
 import random
-print("game orlel or reshka")
+print("game orel or reshka")
 def main():
     guess = ""
     xlist = ["reshka", "orel"]
