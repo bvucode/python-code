@@ -1,3 +1,5 @@
+# game guess munber
+
 import random
 print("game orel or reshka")
 def main():
