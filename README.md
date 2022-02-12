@@ -1,5 +1,5 @@
 # mypythonapps
-bashegame.py is logic game Игра Баше(спички),
+bashegame.py is logic game Игра Баше (спички),
 
 taskmanager.py is to-do list command line,
 
