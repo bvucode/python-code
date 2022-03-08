@@ -1,9 +1,11 @@
 # python-apps
 
-bashegame.py is logic game Bashe Игра Баше (спички)
+bashegame.py - logic game Bashe Игра Баше (спички)
 
-taskmanager.py is to-do list command line
+taskmanager.py - to-do list command line
 
-passwordgenerator.py for password generate
+passwordgenerator.py - password generate
 
-orelreshka.py is game about guess number
+orelreshka.py - game about guess number
+
+deletewords.py - delete list of words from other list of word
