@@ -1,4 +1,4 @@
-# python-apps
+# pyapps
 
 bashegame.py - logic game Bashe Игра Баше (спички)
 
