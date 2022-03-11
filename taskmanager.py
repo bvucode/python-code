@@ -1,5 +1,4 @@
 # taskmanager
-# author Bulat
 
 print("taskmanager")
 print("\ntop tasks is most important and urgent")
