@@ -1,5 +1,4 @@
 # Bashe Game
-# author Bulat
 
 import random
 
