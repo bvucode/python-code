@@ -7,8 +7,10 @@ print("password generator and save")
 s1 = "abcdefghijklmnopqrstuvwxyz"
 s2 = "0123456789"
 def main():
-    l = int(input("password length: "))
-    generate(l)
+    l = input("password length: ")
+    if l == "exit":
+        leave()
+    generate(int(l))
 def save(x):
     print("password is {}".format(x))
 def generate(x):
@@ -19,5 +21,7 @@ def generate(x):
     p = p1 + p2
     u = p.capitalize()
     save(u)
+def leave():
+    exit()
 while True:
     main()
