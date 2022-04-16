@@ -7,3 +7,5 @@ orelreshka.py - game about guess number
 passwordgenerator.py - password generate
 
 taskmanager.py - to-do list command line
+
+polyglot.py - command line polyglot app
