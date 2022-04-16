@@ -2,7 +2,6 @@ import random
 import re
 import json
 
-
 data = """{"i will not travel in winter":"я не буду путешествовать зимой",
      "what are you doing next week?":"что ты делаешь на следующей неделе?",
      "what do you think?":"что скажешь?",
@@ -14,7 +13,7 @@ d = json.loads(data)
 def main():
     count = 0
     engvar, ruvar = random.choice(list(d.items()))
-    print("\n{}".format(ruvar))
+    print("\n{}\n".format(ruvar))
     wlist = []
     wlist = re.split("[\W\s]", engvar) 
     for i in wlist:
