@@ -6,6 +6,6 @@ orelreshka.py - game about guess number
 
 passwordgenerator.py - password generate
 
-taskmanager.py - to-do list command line
+taskmanager.py - command line to-do list
 
-polyglot.py - command line polyglot app
+polyglot.py - command line app like polyglot for learn language
