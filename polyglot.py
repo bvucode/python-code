@@ -23,16 +23,16 @@ def main():
     engvar, ruvar = random.choice(list(d.items()))
     print("\n{}\n".format(ruvar))
     ispl = spliting(engvar)
-    for i in listforhelp:
-        x = spliting(i)
-        for j in ispl:
+    for i in ispl:
+        for j in listforhelp:
+            x = spliting(j)
+            tlist = []
             for k in x:
-                triallist = []
-                if j == k:
-                    triallist.append(k)
+                if i == k:
+                    tlist.append(k)
                     y = random.choice(x)
-                    triallist.append(y)
-                    print(triallist)
+                    tlist.append(y)
+                    print(tlist)
     tr = input("\ntranslate: ")
     if tr == "exit":
         leave()
