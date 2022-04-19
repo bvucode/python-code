@@ -11,9 +11,9 @@ data = """{"i will not travel in winter":"я не буду путешество�
 listforhelp = ["i you he she we they it",
                "am are is",
                "was were won't",
-               "have, has",
+               "have has haven't",
                "do did does",
-               "this, that"]
+               "this that their"]
 
 d = json.loads(data)
 
@@ -27,12 +27,15 @@ def main():
         for j in listforhelp:
             x = spliting(j)
             tlist = []
-            for k in x:
-                if i == k:
-                    tlist.append(k)
+            if i in x:
+                c = 2
+                tlist.append(i)
+                while c > 0:
                     y = random.choice(x)
-                    tlist.append(y)
-                    print(tlist)
+                    if y not in tlist:
+                        tlist.append(y)
+                        c -= 1
+                print(tlist)
     tr = input("\ntranslate: ")
     if tr == "exit":
         leave()
