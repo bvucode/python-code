@@ -6,7 +6,6 @@ print("\n show - show task \n take - take task \n exit - exit \n")
 
 tasklist = []
 def main():
-    global xt
     xt = input(">> ")
     getf(xt)
 def getf(arg):
@@ -24,7 +23,7 @@ def getf(arg):
     elif arg == "exit":
         leave()
     else:
-        tasklist.append(xt)
+        tasklist.append(arg)
 def leave():
     exit()
 while True:
