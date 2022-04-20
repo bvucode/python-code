@@ -10,8 +10,8 @@ data = """{"i will not travel in winter":"я не буду путешество�
 
 listforhelp = ["i you he she we they it",
                "am are is",
-               "was were won't",
-               "have has haven't",
+               "be was were",
+               "have has had",
                "do did does",
                "this that their"]
 
@@ -25,7 +25,7 @@ def main():
     ispl = spliting(engvar)
     for i in ispl:
         for j in listforhelp:
-            x = spliting(j)
+            x = j.split(" ")
             tlist = []
             if i in x:
                 c = 2
