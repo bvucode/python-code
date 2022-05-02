@@ -14,6 +14,8 @@ def main():
     if things == 1:
         things -= vl
         printr(vl, things)
+    elif things == 0:
+        printr(vl, things)
     else:
         things -= vl
         printr(vl, things)
@@ -23,12 +25,11 @@ def printr(apptake, targ):
     if targ == 0:
         print("You win!")
         things = 11
-    elif targ == 1:
-        print("You lost! Total left {}".format(targ))
-        things = 11
     else:
         print("The app took {}. Total left {}".format(apptake, targ))
-        things = targ
+        if targ == 1:
+            print("You lost! Total left {}".format(targ))
+            things = 11 
 
 def logic(xarg):
     global things
@@ -40,7 +41,11 @@ def logic(xarg):
             else:
                 xarg = 4 - xarg
             first = 1
-        if things % 2 == 0:
+        if things == 7:
+            xarg = 2
+        elif things == 4:
+            xarg = 3
+        elif things % 2 == 0:
             xarg = 1
         else:
             xarg = 4 - xarg
