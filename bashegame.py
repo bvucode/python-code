@@ -22,11 +22,11 @@ def main():
 
 def printr(apptake, targ):
     global things
+    print("The app took {}. Total left {}".format(apptake, targ))
     if targ == 0:
         print("You win!")
         things = 11
     else:
-        print("The app took {}. Total left {}".format(apptake, targ))
         if targ == 1:
             print("You lost! Total left {}".format(targ))
             things = 11 
