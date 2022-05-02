@@ -26,10 +26,9 @@ def printr(apptake, targ):
     if targ == 0:
         print("You win!")
         things = 11
-    else:
-        if targ == 1:
-            print("You lost! Total left {}".format(targ))
-            things = 11 
+    elif targ == 1:
+        print("You lost! Total left {}".format(targ))
+        things = 11 
 
 def logic(xarg):
     global things
