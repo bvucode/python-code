@@ -1,21 +1,21 @@
-tr = []
+trlist = []
 
 symbols = {"а":"a", "б":"b", "в":"v", "г":"g", "д":"d", "е":"e",
            "ё":"e", "ж":"zh", "з":"z", "и":"i", "й":"y", "к":"k",
            "л":"l", "м":"m", "н":"n", "о":"o", "п":"p", "р":"r",
            "с":"s", "т":"t", "у":"u", "ф":"f", "х":"kx", "ц":"c",
-           "ч":"ch", "ш":"sh", "щ":"sch", "ъ":"'", "ы":, "ь":"'",
+           "ч":"ch", "ш":"sh", "щ":"sch", "ъ":"'", "ы":"y", "ь":"'",
            "э":"e", "ю":"yu", "я":"ya"}
 
 class Translit:
-    def __init__(self, text):
+    def __init__(self):
+        pass
+    def load(self, text):
         self.text = text
-    def load():
-        for i in text:
+        for i in self.text:
             s = ""
             for j in i:
-                if j in symbol.keys():
-                    s += j
-            u = s.capitalize()
-            tr.append(s)
-    return tr
+                if j in symbols.keys():
+                    s += symbols[j]
+            trlist.append(s)
+        return trlist
