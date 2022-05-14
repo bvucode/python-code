@@ -10,4 +10,4 @@ taskmanager.py - command line to-do list
 
 polyglot.py - command line app like polyglot for learn language
 
-translit.py - class for traslition from russian to latin symbols
+translit.py - class for trasliteration from russian
