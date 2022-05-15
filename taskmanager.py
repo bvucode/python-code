@@ -1,13 +1,13 @@
-# taskmanager
+tasklist = []
 
 print("taskmanager")
 print("\ntop tasks is most important and urgent")
 print("\n show - show task \n take - take task \n exit - exit \n")
 
-tasklist = []
 def main():
     xt = input(">> ")
     getf(xt)
+
 def getf(arg):
     if not arg:
         main()
@@ -24,7 +24,9 @@ def getf(arg):
         leave()
     else:
         tasklist.append(arg)
+
 def leave():
     exit()
+
 while True:
     main()
