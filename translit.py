@@ -12,10 +12,11 @@ class Translit:
         pass
     def load(self, text):
         self.text = text
+        s = ""
         for i in self.text:
-            s = ""
-            for j in i:
-                if j in symbols.keys():
-                    s += symbols[j]
-            trlist.append(s)
+            if i in symbols.keys():
+                s += symbols[i]
+            else:
+                s += i
+        trlist.append(s)
         return trlist
