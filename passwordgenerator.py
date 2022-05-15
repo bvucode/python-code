@@ -1,5 +1,3 @@
-# password generator
-
 import random
 
 print("password generator and save")
