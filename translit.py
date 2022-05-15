@@ -1,4 +1,3 @@
-tr = ""
 
 symbols = {"а":"a", "б":"b", "в":"v", "г":"g", "д":"d", "е":"e",
            "ё":"e", "ж":"zh", "з":"z", "и":"i", "й":"y", "к":"k",
@@ -13,6 +12,7 @@ class Translit:
     def load(self, text):
         self.text = text
         s = ""
+        tr = ""
         for i in self.text:
             if i in symbols.keys():
                 s += symbols[i]
