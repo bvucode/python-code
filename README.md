@@ -9,5 +9,3 @@ passwordgenerator.py - password generate
 taskmanager.py - command line to-do list
 
 polyglot.py - command line app like polyglot for learn language
-
-translit.py - class for trasliteration from russian
