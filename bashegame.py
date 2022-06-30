@@ -45,8 +45,9 @@ Loses the one who is forced to take the last item.
             print("You lost! Total left {}".format(things))
         if things == 0 or things == 1:
             print("Do you want play again? (y or n)")
-            if not input("> ").lower().startswith("y"):
+            if input("> ").lower().startswith("n"):
                 break
-            print("Thanks for playing!")
+            else:
+                print("Thanks for playing!")
 if __name__ == "__main__":
     main()
