@@ -7,3 +7,5 @@ orelreshka.py - game about guess number
 passwordgenerator.py - password generate
 
 taskmanager.py - command line to-do list
+
+binarysearch.py - binary search algorithm
