@@ -5,13 +5,11 @@ def binarysearch(xlist, item):
     while low <= high:
         mid:int = (low + high) // 2
         if xlist[mid] == item:
-            return mid
+            return True
         elif xlist[mid] < item:
             low = mid + 1
         elif xlist[mid] > item:
             high = mid - 1
-        else:
-            return True
     return False
 print(binarysearch(["a", "d", "e", "f", "x"], "f"))
     
