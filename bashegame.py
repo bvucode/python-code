@@ -5,12 +5,7 @@ THINGS = 11 # 11 things. The game can have 7, 11, 15, 19, 21, ... things.
 def main():
     things = THINGS #make same number THINGS
     firststep = 0
-    print("""Game Bashe. There are 11 items. Rivals go in turn, for each move
-any of the players can take 1, 2 or 3 items.
-Loses the one who is forced to take the last item.
-Игра Баше. 11 предметов. Соперники ходят по очереди, за каждый ход
-любой  из играющих может взять 1, 2 или 3 предмета.
-Проигрывает тот, кто вынужден взять последний предмет.""")
+    print("""Game Bashe. There are 11 items. Rivals go in turn, for each move any of the players can take 1, 2 or 3 items. Loses the one who is forced to take the last item. Игра Баше. 11 предметов. Соперники ходят по очереди, за каждый ход любой  из играющих может взять 1, 2 или 3 предмета. Проигрывает тот, кто вынужден взять последний предмет.""")
     while True:
         user = int(input('Enter: number 1, 2 or 3: '))
         if user > 3:
