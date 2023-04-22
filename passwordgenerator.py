@@ -1,23 +1,22 @@
 import random
 
 print("password generator and save")
-s1 = "abcdefghijklmnopqrstuvwxyz"
-s2 = "0123456789"
-s3 = "@!.,"
+char = "abcdefghijklmnopqrstuvwxyz"
+numb = "0123456789"
+symb = "@!.,"
 def main():
-    l = input("password length: ")
-    if l == "exit":
+    lenpass = input("password length: ")
+    if lenpass == "exit":
         leave()
-    generate(int(l))
-def generate(x):
-    p1 = ""
-    p2 = random.choice(s2)
-    p3 = random.choice(s3)
-    for i in range(x-2):
-        p1 += random.choice(s1)
-    p = p1 + p2 + p3
-    u = p.capitalize()
-    print("password is {}".format(u))
+    generate(int(lenpass))
+def generate(arg):
+    part1 = ""
+    part2 = random.choice(numb)
+    part3 = random.choice(symb)
+    for i in range(arg-2):
+        part1 += random.choice(char)
+    passst = part1 + part2 + part3
+    print("password is {}".format(passst.capitalize()))
 def leave():
     exit()
 while True:
