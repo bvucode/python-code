@@ -4,7 +4,9 @@ bashegame.py - logic game Bashe Игра Баше (спички)
 
 orelreshka.py - game about guess number
 
-passwordgenerator.py - password generate
+passwordgenerator.py - password generation
+
+passwordgenerator2.py - interval password generation
 
 taskmanager.py - command line to-do list
 
