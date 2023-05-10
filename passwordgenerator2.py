@@ -5,13 +5,15 @@ def generate_passwords(start_len, end_len):
     charn = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
     passwords = []
     for i in range(start_len, end_len + 1):
+        count = 0
         while len(passwords) < quantity:
             password = ""
             for j in range(i):
                 password += random.choice(charn)
+            count += 1
             if password not in passwords:
                 passwords.append(password)
-            if len(passwords) == quantity:
+            if len(passwords) == quantity or count > quantity:
                 print(f'{i} символьные пароли сгенерированы.')
                 with open(f'passwords.txt', 'a') as f:
                     for password in passwords:
