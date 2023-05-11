@@ -14,15 +14,15 @@ def generate_passwords(start_len, end_len):
             if password not in passwords:
                 passwords.append(password)
             if len(passwords) == quantity or count > quantity:
-                print(f'{i} символьные пароли сгенерированы.')
-                with open(f'passwords.txt', 'a') as f:
+                print(f"{i} символьные пароли сгенерированы.")
+                with open(f"passwords.txt", "a") as f:
                     for password in passwords:
-                        f.write(password + '\n')
+                        f.write(password + "\n")
                 passwords = []
                 break
-    print('Все пароли сгенерированы.')
+    print("Все пароли сгенерированы.")
 
-if __name__ == '__main__':
-    start_len = int(input('Введите минимальную длину пароля: '))
-    end_len = int(input('Введите максимальную длину пароля: '))
+if __name__ == "__main__":
+    start_len = int(input("Введите минимальную длину пароля: "))
+    end_len = int(input("Введите максимальную длину пароля: "))
     generate_passwords(start_len, end_len)
