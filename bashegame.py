@@ -11,7 +11,7 @@ def main():
     while True:
         user = int(input('Enter: number 1, 2 or 3: '))
         if user > 3 :
-            print("try again")
+            print("from 1 to 3 only")
         else:
             things -= user
             if firststep == 0 and user != 2:
