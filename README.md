@@ -10,7 +10,7 @@ passwordgenerator.py - password generation
 
 passwordgenerator2.py - interval password generation
 
-taskmanager.py - command line to-do list
+taskmanager.py - command-line to-do list
 
 binarysearch.py - binary search algorithm
 
