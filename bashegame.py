@@ -14,26 +14,38 @@ def main():
             print("from 1 to 3 only")
         else:
             things -= user
-            if firststep == 0 and user != 2:
-                apptake = user
-                winalg = 1
-                firststep = 1
-            else:
-                if winalg == 1:
-                    apptake = 4 - user
-                elif winalg == 1 and things == 2:
-                    apptake = 1
+            if things > 1:
+                if firststep == 0 and user != 2:
+                    apptake = user
+                    winalg = 1
+                    firststep = 1
                 else:
-                    if things == 1:
+                    if winalg == 1 and things == 7:
+                        apptake = 2
+                    elif winalg == 1 and things == 6:
                         apptake = 1
+                    elif winalg == 1 and things == 4:
+                        apptake = 3
+                    elif winalg == 1 and things > 7:
+                        apptake = 4 - user
                     else:
-                        apptake = random.randint(1, 3)
-            things -= apptake
+                        if things == 1:
+                            apptake = 1
+                        elif things == 2:
+                            apptake = 1
+                        elif things == 3:
+                            apptake = 2
+                        else:
+                            apptake = random.randint(1, 3)
+                things -= apptake
+            else:
+                apptake = 1
+                things -= apptake
         print("The app took {}. Total left {}".format(apptake, things))
         if things == 0:
             print("You win!")
         elif things == 1:
-            print("You lost! Total left {}".format(things))
+            print("You lost!")
         if things == 0 or things == 1:
             print("Do you want play again? (y or n)")
             if input("> ").lower().startswith("n"):
