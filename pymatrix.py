@@ -1,13 +1,16 @@
 import random, time
 print("\x1b[2J", end = "")
-char = " abcdifg "
+char = " ab cd ef "
+char2 = ".,/)(><^?_+-%':&][#$! abcdefghijklmnopqrstuvwxyz 0123456789"
 while True:
     print('\x1b[H', end='')
     flag = 0
     c = []
-    for i in range(20):
+    tlist = []
+    for j in range(30):
         while flag == 0:
-            c = [random.choice(char) for i in range(20)]
+            c = [random.choice(char) for i in range(40)]
+            tlist.append(c)
             print(" ".join(c))
             flag = 1
         else:
@@ -16,7 +19,21 @@ while True:
                 if l == " ":
                     xlist.append(" ")
                 else:
-                    c2 = random.choice(char)
+                    c2 = random.choice(char2)
                     xlist.append(c2)
             print(" ".join(xlist))
-    time.sleep(0.5)
+            tlist.append(xlist)
+    time.sleep(0.45)
+    print('\x1b[H', end='')
+    for i in range(30):
+        for j in tlist:
+            for x, k in enumerate(j):
+                if k == " ":
+                    j[x] = random.choice(char2)
+                else:
+                    j[x] = " "
+        for i in tlist:
+            print(" ".join(i))
+        time.sleep(0.45)
+        print('\x1b[H', end='')
+    
