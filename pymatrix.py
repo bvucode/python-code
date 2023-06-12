@@ -6,7 +6,7 @@ while True:
     print('\x1b[H', end='')
     flag = 0
     tlist = []
-    for j in range(random.randint(1, 20)):
+    for j in range(20):
         while flag == 0:
             c = [random.choice(char) for i in range(40)]
             tlist.append(c)
