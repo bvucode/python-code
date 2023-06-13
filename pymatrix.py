@@ -1,15 +1,14 @@
 import random, time
 print("\x1b[2J", end = "")
-char = " a b c d e f g h i j k l m n "
-char2 = ".,/)(><^?_+-%':&][#$!abcdefghijklmnopqrstuvwxyzABCDIFGHIJKLMNOPQRSTUVWXYZ0123456789"
+char = ".,/)(><^?_+-%':&][#$!abcdefghijklmnopqrstuvwxyzABCDIFGHIJKLMNOPQRSTUVWXYZ0123456789"
 while True:
     print('\x1b[H', end='')
     flag = 0
     tlist = []
     c = []
-    for x, j in enumerate(range(21)):
+    for x, j in enumerate(range(51)):
         while flag == 0:
-            c = [(random.choice(char), random.randint(1, 10)) for i in range(40)]
+            c = [(random.choice(" ."), random.randint(1, 20)) for i in range(104)]
             flag = 1
         else:
             xlist = []
@@ -20,11 +19,11 @@ while True:
                     if l[1] < x:
                         c2 = " "
                     else:
-                        c2 = random.choice(char2)
+                        c2 = random.choice(char)
                     xlist.append(c2)
             print(" ".join(xlist))
             tlist.append(xlist)
-    time.sleep(0.15)
+    time.sleep(0.035)
     print('\x1b[H', end='')
     for y, j in enumerate(tlist):
         if y == len(tlist) - 3:
@@ -36,7 +35,7 @@ while True:
                         for l in range(len(tlist) - (y + 1)):
                             try:
                                 if tlist[y + l][x] == " ":
-                                    tlist[y + l][x] = random.choice(char2)
+                                    tlist[y + l][x] = random.choice(char)
                                     break
                             except IndexError:
                                 break
@@ -44,13 +43,13 @@ while True:
                         for l in range(len(tlist) - (y + 1)):
                             try:
                                 if tlist[y + l][x] == " ":
-                                    tlist[y + l][x] = random.choice(char2)
+                                    tlist[y + l][x] = random.choice(char)
                                     j[x] = " "
                                     break
                             except IndexError:
                                 break
             for i in tlist:
                 print(" ".join(i))
-            time.sleep(0.16)
+            time.sleep(0.035)
             print('\x1b[H', end='')
     
