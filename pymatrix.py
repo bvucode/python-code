@@ -7,12 +7,12 @@ while True:
     tlist = []
     for x, j in enumerate(range(51)):
         while flag == 0:
-            c = [(random.choice(" ."), random.randint(1, 40)) for i in range(104)]
+            c = [(random.choice("01"), random.randint(1, 50)) for i in range(104)]
             flag = 1
         else:
             xlist = []
             for l in c:
-                if l[0] == " ":
+                if l[0] == "0":
                     xlist.append(" ")
                 else:
                     if l[1] < x:
@@ -20,17 +20,14 @@ while True:
                     else:
                         c2 = random.choice(char)
                     xlist.append(c2)
-            print(" ".join(xlist))
             tlist.append(xlist)
-    time.sleep(0.046)
-    print('\x1b[H', end='')
     for y, j in enumerate(tlist):
         if y == len(tlist) - 10:
             break
         else:
             for x, k in enumerate(j):
                 if k != " ":
-                    if c[x][1] >= 20:
+                    if c[x][1] >= 15:
                         for l in range(len(tlist) - (y + 1)):
                             try:
                                 if tlist[y + l][x] == " ":
@@ -43,6 +40,8 @@ while True:
                             if c[x + 1][1] > c[x][1]:
                                 for l in range(len(tlist) - (y + 1)):
                                     try:
+                                        if c[x - 1][0] == "0" and y > 10:
+                                            tlist[l][x - 1] = random.choice(char)
                                         if tlist[y + l][x] == " ":
                                             tlist[y + l][x] = random.choice(char)
                                             j[x] = " "
@@ -52,6 +51,7 @@ while True:
                             else:
                                 for l in range(len(tlist) - (y + 1)):
                                     try:
+                                        tlist[y + l][x] = random.choice(char)
                                         if tlist[y + l][x] == " ":
                                             tlist[y + l][x] = random.choice(char)
                                             break
@@ -61,6 +61,6 @@ while True:
                             pass
             for i in tlist:
                 print(" ".join(i))
-            time.sleep(0.046)
+            time.sleep(0.05)
             print('\x1b[H', end='')
     
