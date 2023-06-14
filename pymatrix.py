@@ -44,8 +44,7 @@ while True:
                                     try:
                                         if c[x - 1][0] == "0" and y > 5:
                                             if tlist[y + l][x - 1] == " ":
-                                                tlist[l + l - 1][x - 1] = random.choice(char)
-                                                j[x - 1] = " "
+                                                tlist[l + l][x - 1] = random.choice(char)
                                         if tlist[y + l][x] == " ":
                                             tlist[y + l][x] = random.choice(char)
                                             j[x] = " "
