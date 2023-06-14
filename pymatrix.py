@@ -9,7 +9,7 @@ while True:
     tlist = []
     for x, j in enumerate(range(H)):
         while flag == 0:
-            c = [(random.choice("01"), random.randint(1, 50)) for i in range(W)]
+            c = [(random.choice("01"), random.randint(1, H)) for i in range(W)]
             flag = 1
         else:
             xlist = []
@@ -29,7 +29,7 @@ while True:
         else:
             for x, k in enumerate(j):
                 if k != " ":
-                    if c[x][1] >= 25:
+                    if c[x][1] > 25:
                         for l in range(len(tlist) - (y + 1)):
                             try:
                                 if tlist[y + l][x] == " ":
@@ -42,8 +42,10 @@ while True:
                             if c[x + 1][1] > c[x][1]:
                                 for l in range(len(tlist) - (y + 1)):
                                     try:
-                                        if c[x - 1][0] == "0" and y > 25:
-                                            tlist[l][x - 1] = random.choice(char)
+                                        if c[x - 1][0] == "0" and y > 5:
+                                            if tlist[y + l][x - 1] == " ":
+                                                tlist[l + l - 1][x - 1] = random.choice(char)
+                                                j[x - 1] = " "
                                         if tlist[y + l][x] == " ":
                                             tlist[y + l][x] = random.choice(char)
                                             j[x] = " "
