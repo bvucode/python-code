@@ -26,9 +26,18 @@ while True:
     for y, j in enumerate(tlist):
         for x, k in enumerate(j):
             if k != " ":
-                if c[x][1] > H / 2:
+                if c[x][1] >= 20:
                     for l in range(len(tlist)):
                         try:
+                            if tlist[y + (l + 1)][x] == " ":
+                                tlist[y + (l + 1)][x] = random.choice(char)
+                                break
+                        except IndexError:
+                            j[x] = " "
+                elif c[x][1] >= 4 and c[x][1] <= 8:
+                    for l in range(len(tlist)):
+                        try:
+                            tlist[y + (l + 1)][x] = random.choice(char)
                             if tlist[y + (l + 1)][x] == " ":
                                 tlist[y + (l + 1)][x] = random.choice(char)
                                 break
@@ -44,14 +53,9 @@ while True:
                         except IndexError:
                             j[x] = " "
             else:
-                try:
-                    if y + 1 >= c2[x][1] and c2[x][0] == "1":
-                        tlist[y][x]  = random.choice(char)
-                except IndexError:
-                    pass
-                    
-                    
+                if y + 1 >= c2[x][1] and c2[x][0] == "1":
+                    tlist[y][x]  = random.choice(char)   
         for i in tlist:
             print(" ".join(i))
-        time.sleep(0.05)
+        time.sleep(0.45)
         print("\x1b[H", end="")
