@@ -22,7 +22,7 @@ while True:
                     xlist.append(c2)
             tlist.append(xlist)
         flag = 1
-    c3 = [(random.choice("010"), random.randint(1, 75)) for i in range(W)]
+    c3 = [(random.choice("01"), random.randint(1, 75)) for i in range(W)]
     for y, j in enumerate(tlist):
         for x, k in enumerate(j):
             if k != " ":
@@ -34,9 +34,12 @@ while True:
                             break
                     except IndexError:
                         j[x] = " "
-            if y + 1 <= c3[x][1] and c3[x][0] == "1":
-                j[x]  = random.choice(char)
+            try:
+                if y + 1 <= c3[x][1] and c3[x][0] == "1" and c3[x + 1][0] != "1":
+                    j[x] = random.choice(char)
+            except IndexError:
+                pass
         for i in tlist:
             print(" ".join(i))
-        time.sleep(0.045)
+        time.sleep(0.025)
         print("\x1b[H", end="")
