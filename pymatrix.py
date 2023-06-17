@@ -8,11 +8,11 @@ H = 50
 while True:
     print("\x1b[H", end="")
     if flag == 0:
-        c = [(random.choice("01"), random.randint(1, H)) for i in range(W)]
+        c = [(random.randint(0, 1), random.randint(1, H)) for i in range(W)]
         for x, i in enumerate(range(H)):
             xlist = []
             for j in c:
-                if j[0] == "0":
+                if j[0] == 0:
                     xlist.append(" ")
                 else:
                     if x + 1 < j[1]:
@@ -22,7 +22,7 @@ while True:
                     xlist.append(c2)
             tlist.append(xlist)
         flag = 1
-    c3 = [(random.choice("01"), random.randint(1, 75)) for i in range(W)]
+    c3 = [(random.randint(0, 1), random.randint(1, H * 2)) for i in range(W)]
     for y, j in enumerate(tlist):
         for x, k in enumerate(j):
             if k != " ":
@@ -35,7 +35,7 @@ while True:
                     except IndexError:
                         j[x] = " "
             try:
-                if y + 1 <= c3[x][1] and c3[x][0] == "1" and c3[x + 1][0] != "1":
+                if y + 1 <= c3[x][1] and c3[x][0] == 1:
                     j[x] = random.choice(char)
             except IndexError:
                 pass
