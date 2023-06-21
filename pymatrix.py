@@ -7,36 +7,26 @@ W = 104
 H = 50
 while True:
     print("\x1b[H", end="")
+    c = [(random.randint(0, 1), random.randint(1, H)) for i in range(W)]
     if flag == 0:
-        c = [(random.randint(0, 1), random.randint(1, H)) for i in range(W)]
-        for x, i in enumerate(range(H)):
-            xlist = []
-            for j in c:
-                if j[0] == 0:
-                    xlist.append(" ")
-                else:
-                    if x + 1 < j[1]:
-                        c2 = random.choice(char)
-                    else:
-                        c2 = " "
-                    xlist.append(c2)
-            tlist.append(xlist)
+        for i in range(H):
+            c = [" " for i in range(W)]
+            tlist.append(c)
         flag = 1
-    c3 = [(random.randint(0, 1), random.randint(1, H * 2)) for i in range(W)]
     for y, j in enumerate(tlist):
         for x, k in enumerate(j):
-            if k != " ":
+            if c[x][0] == 1:
                 for l in range(len(tlist)):
                     try:
                         if tlist[y + (l + 1)][x] == " ":
                             tlist[y + (l + 1)][x] = random.choice(char)
-                            j[x] = " "
                             break
                     except IndexError:
                         j[x] = " "
             try:
-                if y + 1 <= c3[x][1] and c3[x][0] == 1:
+                if y + 1 >= c[x][1] and c[x][0] == 1:
                     j[x] = random.choice(char)
+                    j[x] = " "
             except IndexError:
                 pass
         for i in tlist:
