@@ -5,17 +5,15 @@ def fngrams(text, ngrams):
         for x, j in enumerate(i):
             trlist = []
             tc = ""
-            tx = x
             for k in range(ngrams):
                 if k == 0:
-                    tc = str(i[tx])
+                    tc = str(i[x + k])
                 elif k > 0:
                     try:
-                        tc += " " + str(i[tx])
+                        tc += " " + str(i[x + k])
                     except IndexError:
                         break
                 trlist.append(tc)
-                tx += 1
             nlist.append(tuple(trlist))
     return nlist
 print(fngrams([["pyhon", "awesome", "programming", "language"]], 3))
