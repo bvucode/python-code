@@ -18,6 +18,16 @@ while True:
                 if cf[y][0] >= x and cf[y][1] - x <= x:
                    tlist[x][y] = random.choice(char)
         flag = 1
+    else:
+        for i in range(W):
+            c = 0
+            for j in range(H):
+                if tlist[j][i]  == " ":
+                    c += 1
+            if c == H:
+                rn = random.randint(1, H - 5)
+                for k in range(4):
+                    tlist[rn + (k + 1)][i] = random.choice(char)
     for i in range(W):
         for j in range(H):
             try:
@@ -29,6 +39,7 @@ while True:
                     start = 0
             except IndexError:
                 tlist[j][i] = " "
+                tlist[0][i] = random.choice(char)
         for i in tlist:
             print(" ".join(i))
         time.sleep(0.001)
