@@ -2,7 +2,7 @@ import random, time
 print("\x1b[2J", end = "")
 tlist = []
 flag = 0
-W = 104
+W = 106
 H = 50
 char = ".,/)(><^?_+-%':&][#$!abcdefghijklmnopqrstuvwxyzABCDIFGHIJKLMNOPQRSTUVWXYZ0123456789"
 while True:
@@ -25,8 +25,9 @@ while True:
                 if tlist[j][i]  == " ":
                     c += 1
             if c == H:
-                rn = random.randint(1, H - 5)
-                for k in range(4):
+                rn = random.randint(1, H - (H // 3))
+                rr = random.randint(1, H - (H // 3))
+                for k in range(rr - rn):
                     tlist[rn + (k + 1)][i] = random.choice(char)
     for i in range(W):
         for j in range(H):
