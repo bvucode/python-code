@@ -19,3 +19,5 @@ spinningdonut.py - spinning donut in python
 pymatrix.py - matrix effect
 
 fngrams.py - function to make n-grams
+
+decoration.py - decoration example
