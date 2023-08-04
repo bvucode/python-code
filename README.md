@@ -21,3 +21,5 @@ pymatrix.py - matrix effect
 fngrams.py - function to make n-grams
 
 decoration.py - decoration example
+
+typingeffect.py - effect of typing
