@@ -16,3 +16,4 @@ mlist = [t1, t2]
 for i in mlist:
     typingeffect(i)
     time.sleep(1)
+    os.system("clear")
