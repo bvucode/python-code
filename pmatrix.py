@@ -18,11 +18,12 @@ class PyMatrix:
         for x, i in enumerate(self.tlist):
             for y, j in enumerate(i):
                 if cf[y][0] >= x and cf[y][1] - x <= x:
-                   self.tlist[x][y] = random.choice(self.char)
-                   for i in self.tlist:
-                       print(" ".join(i))
-                   time.sleep(0.001)
-                   print("\x1b[H", end="")
+                    self.tlist[x - 1][y] = random.choice(self.char)
+                    self.tlist[x][y] = random.choice(self.char)
+                    for i in self.tlist:
+                        print(" ".join(i))
+                    time.sleep(0.001)
+                    print("\x1b[H", end="")
     def update(self):
         start = 0
         for i in range(self.w):

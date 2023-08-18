@@ -3,7 +3,7 @@ print("\x1b[2J", end = "")
 tlist = []
 flag = 0
 W = 106
-H = 54
+H = 50
 char = ".,/)(><^?_+-%':&][#$!abcdefghijklmnopqrstuvwxyzABCDIFGHIJKLMNOPQRSTUVWXYZ0123456789"
 while True:
     print("\x1b[H", end="")
@@ -16,11 +16,12 @@ while True:
         for x, i in enumerate(tlist):
             for y, j in enumerate(i):
                 if cf[y][0] >= x and cf[y][1] - x <= x:
-                   tlist[x][y] = random.choice(char)
-                   for i in tlist:
-                       print(" ".join(i))
-                   time.sleep(0.001)
-                   print("\x1b[H", end="")
+                    tlist[x - 1][y] = random.choice(char)
+                    tlist[x][y] = random.choice(char)
+                    for i in tlist:
+                        print(" ".join(i))
+                    time.sleep(0.001)
+                    print("\x1b[H", end="")
         flag = 1
     else:
         for i in range(W):
