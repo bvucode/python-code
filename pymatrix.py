@@ -3,7 +3,7 @@ print("\x1b[2J", end = "")
 tlist = []
 flag = 0
 W = 106
-H = 50
+H = 54
 char = ".,/)(><^?_+-%':&][#$!abcdefghijklmnopqrstuvwxyzABCDIFGHIJKLMNOPQRSTUVWXYZ0123456789"
 while True:
     print("\x1b[H", end="")
@@ -17,6 +17,10 @@ while True:
             for y, j in enumerate(i):
                 if cf[y][0] >= x and cf[y][1] - x <= x:
                    tlist[x][y] = random.choice(char)
+                   for i in tlist:
+                       print(" ".join(i))
+                   time.sleep(0.001)
+                   print("\x1b[H", end="")
         flag = 1
     else:
         for i in range(W):
@@ -29,19 +33,19 @@ while True:
                 rr = random.randint(1, H - (H // 3))
                 for k in range(rr - rn):
                     tlist[rn + (k + 1)][i] = random.choice(char)
-    for i in range(W):
-        for j in range(H):
-            try:
-                if tlist[j][i] != " " and start == 0:
+        for i in range(W):
+            for j in range(H):
+                try:
+                    if tlist[j][i] != " " and start == 0:
+                        tlist[j][i] = " "
+                        start = 1
+                    elif tlist[j][i] == " " and start == 1:
+                        tlist[j][i] = random.choice(char)
+                        start = 0
+                except IndexError:
                     tlist[j][i] = " "
-                    start = 1
-                elif tlist[j][i] == " " and start == 1:
-                    tlist[j][i] = random.choice(char)
-                    start = 0
-            except IndexError:
-                tlist[j][i] = " "
-                tlist[0][i] = random.choice(char)
-        for i in tlist:
-            print(" ".join(i))
-        time.sleep(0.001)
-        print("\x1b[H", end="")
+                    tlist[0][i] = random.choice(char)
+            for i in tlist:
+                print(" ".join(i))
+            time.sleep(0.001)
+            print("\x1b[H", end="")
